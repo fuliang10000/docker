@@ -50,7 +50,6 @@ services: #所有服务集合
     volumes:
       - "../cai:/var/www/laravel" #代码目录
       - "../api:/var/www/api"
-      - "../user:/var/www/shop"
       - "./docker/php/ini/php.ini-development:/usr/local/etc/php/php.ini" #php配置文件
       - "./docker/php/ini/www.conf:/usr/local/etc/php-fpm.d/www.conf" # php-fpm配置文件
     links:
