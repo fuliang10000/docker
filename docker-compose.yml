@@ -63,7 +63,7 @@ services: #所有服务集合
     volumes:
       - "../cai:/var/www/laravel" #代码目录
       - "../api:/var/www/api"
-      - "../user:/var/www/shop"
+      - "../user:/var/www/shop/"
       - "./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf"
       - "./docker/nginx/vhost:/etc/nginx/conf.d/vhost"
     ports:
