@@ -48,7 +48,7 @@ services: #所有服务集合
 #      - tool
     restart: always
     volumes:
-      - "../cai:/var/www/cai" #代码目录
+      - "../cai:/var/www/laravel" #代码目录
       - "../api:/var/www/api"
       - "../api-test:/var/www/api-test"
       - "./docker/php/ini/php.ini-development:/usr/local/etc/php/php.ini" #php配置文件
