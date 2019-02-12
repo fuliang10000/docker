@@ -59,68 +59,68 @@ RUN composer config -g repo.packagist composer https://packagist.phpcomposer.com
 RUN echo 'export PATH="$PATH:/root/.composer/vendor/bin"' > /etc/profile
 RUN export PATH=$PATH:/root/.composer/vendor/bin
 # 安装laravel构建工具
-RUN composer global require "laravel/installer"
-RUN ln -s /root/.composer/vendor/bin/laravel /usr/bin/laravel
-RUN laravel -v
+#RUN composer global require "laravel/installer"
+#RUN ln -s /root/.composer/vendor/bin/laravel /usr/bin/laravel
+#RUN laravel -v
 # 安装phpunit自动测试工具
-RUN wget http://phar.phpunit.cn/phpunit.phar
-RUN chmod +x phpunit.phar
-RUN mv ./phpunit.phar /root/.composer/vendor/bin
-RUN ln -s /root/.composer/vendor/bin/phpunit.phar /usr/bin/phpunit
-RUN phpunit --version
+#RUN wget http://phar.phpunit.cn/phpunit.phar
+#RUN chmod +x phpunit.phar
+#RUN mv ./phpunit.phar /root/.composer/vendor/bin
+#RUN ln -s /root/.composer/vendor/bin/phpunit.phar /usr/bin/phpunit
+#RUN phpunit --version
 
 # 安装php代码检查规范
-RUN composer global require "squizlabs/php_codesniffer"
-RUN php /root/.composer/vendor/bin/phpcs -h
+#RUN composer global require "squizlabs/php_codesniffer"
+#RUN php /root/.composer/vendor/bin/phpcs -h
 
 # 安装nodejs
-RUN curl -sL https://rpm.nodesource.com/setup_7.x | bash -
-RUN yum -y install nodejs
-RUN yum list installed nodejs
-RUN node -v
+#RUN curl -sL https://rpm.nodesource.com/setup_7.x | bash -
+#RUN yum -y install nodejs
+#RUN yum list installed nodejs
+#RUN node -v
 # 设置nodejs为国内镜像
 #RUN npm install -g npm
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
-RUN cnpm -v
+#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+#RUN cnpm -v
 
 # Final update and clean up
 RUN yum -y update
 RUN yum clean all
 
 #安装小程序开发工具wepy
-RUN cnpm install wepy-cli -g
+#RUN cnpm install wepy-cli -g
 
 # 安装vue构建命令
-RUN cnpm install -g vue-cli
-RUN vue --version
+#RUN cnpm install -g vue-cli
+#RUN vue --version
 
 # 安装tarojs用于各小程序，H5开发
-RUN cnpm install -g @tarojs/cli
-RUN taro --version
+#RUN cnpm install -g @tarojs/cli
+#RUN taro --version
 
-RUN cnpm install -g yarn
-RUN yarn --version
-RUN yarn config set registry https://registry.npm.taobao.org
+#RUN cnpm install -g yarn
+#RUN yarn --version
+#RUN yarn config set registry https://registry.npm.taobao.org
 
-RUN composer global require "laravel/envoy"
-RUN ln -s /root/.composer/vendor/bin/envoy /usr/bin/envoy
-RUN envoy -v
-RUN yum -y install epel-release
-RUN yum -y install tesseract
-RUN cd /usr/share/tesseract/tessdata
-RUN git init
-RUN git remote add origin https://github.com/tesseract-ocr/tessdata.git
-RUN git pull origin master
-RUN tesseract --list-langs
-RUN yum -y install tesseract-devel
-RUN yum -y install python-pip
-RUN python -m pip install --upgrade --force pip
-RUN pip install pillow
-RUN npm cache clean -f
-RUN npm install n -g
-RUN n -V
-RUN n stable
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+#RUN composer global require "laravel/envoy"
+#RUN ln -s /root/.composer/vendor/bin/envoy /usr/bin/envoy
+#RUN envoy -v
+#RUN yum -y install epel-release
+#RUN yum -y install tesseract
+#RUN cd /usr/share/tesseract/tessdata
+#RUN git init
+#RUN git remote add origin https://github.com/tesseract-ocr/tessdata.git
+#RUN git pull origin master
+#RUN tesseract --list-langs
+#RUN yum -y install tesseract-devel
+#RUN yum -y install python-pip
+#RUN python -m pip install --upgrade --force pip
+#RUN pip install pillow
+#RUN npm cache clean -f
+#RUN npm install n -g
+#RUN n -V
+#RUN n stable
+#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 RUN yum clean all
 # Define work directory
