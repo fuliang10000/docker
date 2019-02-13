@@ -26,26 +26,26 @@ services: #所有服务集合
       --requirepass "${REDIS_PASSWORD}"
     ports:
       - "${REDIS_PORT}:6379"
-#  tool: #工具容器(包含:composer,npm,cnpm,git,php,node...)
-#    build: ./docker/tool
-#    depends_on:
-#      - mysql
-#      - redis
-#    volumes: #挂载php配置项
-#      - ".:/home/www"
-#      - "./docker/tool/php/php-fpm.conf:/etc/php-fpm.conf"
-#      - "./docker/tool/php/www.conf:/etc/php-fpm.d/www.conf"
-#      - "./docker/tool/php/php.ini:/usr/local/etc/php/php.ini"
-#      - "./docker/tool/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini"
-#    links:
-#      - mysql:db
-#      - redis:redis
-    #entrypoint: #挂起容器不退出
-    #  tail -f /etc/passwd
+  tool: #工具容器(包含:composer,npm,cnpm,git,php,node...)
+    build: ./docker/tool
+    depends_on:
+      - mysql
+      - redis
+    volumes: #挂载php配置项
+      - ".:/home/www"
+      - "./docker/tool/php/php-fpm.conf:/etc/php-fpm.conf"
+      - "./docker/tool/php/www.conf:/etc/php-fpm.d/www.conf"
+      - "./docker/tool/php/php.ini:/usr/local/etc/php/php.ini"
+      - "./docker/tool/php/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini"
+    links:
+      - mysql:db
+      - redis:redis
+    entrypoint: #挂起容器不退出
+      tail -f /etc/passwd
   php: #官方php服务
     build: ./docker/php
-#    depends_on:
-#      - tool
+    depends_on:
+      - tool
     restart: always
     volumes:
       - "../cai:/var/www/cai-sys" #代码目录
