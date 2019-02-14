@@ -63,11 +63,11 @@ COPY ./php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 #RUN ln -s /root/.composer/vendor/bin/laravel /usr/bin/laravel
 #RUN laravel -v
 # 安装phpunit自动测试工具
-RUN wget http://phar.phpunit.cn/phpunit.phar
-RUN chmod +x phpunit.phar
-RUN mv ./phpunit.phar /root/.composer/vendor/bin
-RUN ln -s /root/.composer/vendor/bin/phpunit.phar /usr/bin/phpunit
-RUN phpunit --version
+#RUN wget http://phar.phpunit.cn/phpunit.phar
+#RUN chmod +x phpunit.phar
+#RUN mv ./phpunit.phar /root/.composer/vendor/bin
+#RUN ln -s /root/.composer/vendor/bin/phpunit.phar /usr/bin/phpunit
+#RUN phpunit --version
 
 # 安装php代码检查规范
 #RUN composer global require "squizlabs/php_codesniffer"
