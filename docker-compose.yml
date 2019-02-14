@@ -33,6 +33,8 @@ services: #所有服务集合
       - redis
     volumes: #挂载php配置项
       - ".:/home/www"
+      - "../cai:/var/www/cai-sys" #代码目录
+      - "../cai-user:/var/www/cai-user"
       - "./docker/tool/php/php-fpm.conf:/etc/php-fpm.conf"
       - "./docker/tool/php/www.conf:/etc/php-fpm.d/www.conf"
       - "./docker/tool/php/php.ini:/usr/local/etc/php/php.ini"
