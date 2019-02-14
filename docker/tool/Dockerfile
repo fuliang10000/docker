@@ -106,22 +106,22 @@ RUN yarn config set registry https://registry.npm.taobao.org
 #RUN ln -s /root/.composer/vendor/bin/envoy /usr/bin/envoy
 #RUN envoy -v
 
-RUN yum -y install epel-release
-RUN yum -y install tesseract
-RUN cd /usr/share/tesseract/tessdata
-RUN git init
-RUN git remote add origin https://github.com/tesseract-ocr/tessdata.git
-RUN git pull origin master
-RUN tesseract --list-langs
-RUN yum -y install tesseract-devel
-RUN yum -y install python-pip
-RUN python -m pip install --upgrade --force pip
-RUN pip install pillow
-RUN npm cache clean -f
-RUN npm install n -g
-RUN n -V
-RUN n stable
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+#RUN yum -y install epel-release
+#RUN yum -y install tesseract
+#RUN cd /usr/share/tesseract/tessdata
+#RUN git init
+#RUN git remote add origin https://github.com/tesseract-ocr/tessdata.git
+#RUN git pull origin master
+#RUN tesseract --list-langs
+#RUN yum -y install tesseract-devel
+#RUN yum -y install python-pip
+#RUN python -m pip install --upgrade --force pip
+#RUN pip install pillow
+#RUN npm cache clean -f
+#RUN npm install n -g
+#RUN n -V
+#RUN n stable
+#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 RUN yum clean all
 # Define work directory
