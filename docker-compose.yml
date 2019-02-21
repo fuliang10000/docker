@@ -35,6 +35,7 @@ services: #所有服务集合
       - ".:/home/www"
       - "../cai:/var/www/cai-sys" #代码目录
       - "../cai-user:/var/www/cai-user"
+      - "../adoc:/var/www/adoc"
       - "./docker/tool/php/php-fpm.conf:/etc/php-fpm.conf"
       - "./docker/tool/php/www.conf:/etc/php-fpm.d/www.conf"
       - "./docker/tool/php/php.ini:/usr/local/etc/php/php.ini"
