@@ -79,7 +79,7 @@ RUN yum -y install nodejs
 RUN yum list installed nodejs
 RUN node -v
 # 设置nodejs为国内镜像
-#RUN npm install -g npm
+RUN npm install -g npm
 RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 RUN cnpm -v
 
