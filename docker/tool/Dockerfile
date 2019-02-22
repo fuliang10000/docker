@@ -104,7 +104,7 @@ RUN yarn config set registry https://registry.npm.taobao.org
 
 # 安装api文档工具
 RUN cnpm install apidoc -g
-RUN apidoc -v
+#RUN apidoc -v
 
 #RUN composer global require "laravel/envoy"
 #RUN ln -s /root/.composer/vendor/bin/envoy /usr/bin/envoy
