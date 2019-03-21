@@ -74,7 +74,7 @@ COPY ./php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 #RUN php /root/.composer/vendor/bin/phpcs -h
 
 # 安装nodejs
-RUN curl -sL https://rpm.nodesource.com/setup_7.x | bash -
+RUN curl -sL https://rpm.nodesource.com/setup_8.x | bash -
 RUN yum -y install nodejs
 RUN yum list installed nodejs
 RUN node -v
