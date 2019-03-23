@@ -39,6 +39,7 @@ RUN yum -y install php71w \
 					         php71w-soap \
 					         php71w-tidy \
 					         php71w-xml \
+					         php71w-event \
 					         php71w-pecl-redis
 
 RUN php -v
