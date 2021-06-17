@@ -1,5 +1,16 @@
 version: '2' #cdocker-compose版本
 services: #所有服务集合
+  mongo:
+    image: mongo:4
+    restart: always
+    env_file: .env #导入配置变量
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "${MONGODB_USERNAME}"
+      MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_PASSWORD}"
+    volumes: #数据卷,挂载目录
+      - "./mongo/data:/data/mongo"
+    ports:
+      - "${MONGODB_PORT}:27017" #宿主机端口:容器端口
   #mysql: #官方mysql数据库服务
   #  image: mysql:5.7 #镜像源
   #  restart: always #异常退出后重启
