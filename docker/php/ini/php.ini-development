@@ -936,6 +936,8 @@ default_socket_timeout = 60
 ;extension=tidy
 ;extension=xmlrpc
 ;extension=xsl
+extension=mongodb.so
+extension=xhprof.so
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;

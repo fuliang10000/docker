@@ -11,6 +11,8 @@ services: #所有服务集合
       - "./mongo/data:/data/mongo"
     ports:
       - "${MONGODB_PORT}:27017" #宿主机端口:容器端口
+    networks:
+      - docker-net
   #mysql: #官方mysql数据库服务
   #  image: mysql:5.7 #镜像源
   #  restart: always #异常退出后重启
@@ -63,9 +65,12 @@ services: #所有服务集合
       - "../../zhongdong:/var/www/zhongdong" #代码目录
       - "./docker/php/ini/php.ini-development:/usr/local/etc/php/php.ini" #php配置文件
       - "./docker/php/ini/www.conf:/usr/local/etc/php-fpm.d/www.conf" # php-fpm配置文件
+      - "./docker/php/ext:/usr/lib/php/ext" # 扩展
     #links:
     #  - mysql:db
     #  - redis:redis
+    networks:
+      - docker-net
   nginx: #官方nginx服务器服务
     image: nginx:1.15
     depends_on:
@@ -79,3 +84,8 @@ services: #所有服务集合
       - "8080:80"
     links:
       - php:php-fpm
+    networks:
+      - docker-net
+networks:
+  docker-net:
+    external: true

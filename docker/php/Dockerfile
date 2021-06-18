@@ -26,9 +26,6 @@ RUN docker-php-ext-install -j$(nproc) pcntl
 RUN docker-php-ext-install -j$(nproc) tokenizer
 RUN pecl install redis-4.0.1 && docker-php-ext-enable redis
 RUN pecl install mcrypt-1.0.0 && docker-php-ext-enable mcrypt
- # Install Mongodb
-RUN pecl channel-update pecl.php.net && \
-    pecl install mongodb && docker-php-ext-enable mongodb
 #删除解压的扩展
 RUN rm -rf /tmp/pear
 RUN docker-php-source delete
