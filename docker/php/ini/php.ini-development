@@ -938,6 +938,7 @@ default_socket_timeout = 60
 ;extension=xsl
 extension=mongodb.so
 extension=xhprof.so
+extension=tideways.so
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;
