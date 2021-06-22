@@ -5,8 +5,9 @@ services: #所有服务集合
     restart: always
     env_file: .env #导入配置变量
     environment:
-      MONGO_INITDB_ROOT_USERNAME: "${MONGODB_USERNAME}"
-      MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_PASSWORD}"
+      MONGO_INITDB_DATABASE: "xhprof"
+#      MONGO_INITDB_ROOT_USERNAME: "${MONGODB_USERNAME}"
+#      MONGO_INITDB_ROOT_PASSWORD: "${MONGODB_PASSWORD}"
     volumes: #数据卷,挂载目录
       - "./mongo/data:/data/mongo"
     ports:

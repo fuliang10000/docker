@@ -10,6 +10,8 @@ RUN apt-get install -y \
     libpng-dev \
     libzip-dev \
     libmcrypt-dev \
+    openssl \
+    libssl-dev \
     libxml2
 #安装扩展
 RUN docker-php-ext-install -j$(nproc) iconv
@@ -24,8 +26,8 @@ RUN docker-php-ext-install -j$(nproc) mysqli
 RUN docker-php-ext-install -j$(nproc) zip
 RUN docker-php-ext-install -j$(nproc) pcntl
 RUN docker-php-ext-install -j$(nproc) tokenizer
-RUN pecl install redis-4.0.1 && docker-php-ext-enable redis
-RUN pecl install mcrypt-1.0.0 && docker-php-ext-enable mcrypt
+#RUN pecl install redis-4.0.1 && docker-php-ext-enable redis
+#RUN pecl install mcrypt-1.0.0 && docker-php-ext-enable mcrypt
 #删除解压的扩展
 RUN rm -rf /tmp/pear
 RUN docker-php-source delete
