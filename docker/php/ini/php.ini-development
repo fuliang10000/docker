@@ -940,7 +940,7 @@ extension=mcrypt.so
 extension=redis.so
 extension=mongodb.so
 extension=xhprof.so
-;extension=tideways.so
+extension=tideways.so
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;
