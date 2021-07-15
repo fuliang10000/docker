@@ -936,11 +936,12 @@ default_socket_timeout = 60
 ;extension=tidy
 ;extension=xmlrpc
 ;extension=xsl
+extension=igbinary.so
 extension=mcrypt.so
 extension=redis.so
 extension=mongodb.so
 extension=xhprof.so
-extension=tideways.so
+;extension=tideways.so
 
 ;;;;;;;;;;;;;;;;;;;
 ; Module Settings ;
